@@ -2,8 +2,6 @@
 
 def sqrt_way(n)
   s = Math.sqrt(n)
-  return 1 if n == s
-
   (0..s).inject(0) do |res, i|
     sq = Math.sqrt(n - i**2)
     res+=1 if (sq >= i) and (sq == sq.to_i)
