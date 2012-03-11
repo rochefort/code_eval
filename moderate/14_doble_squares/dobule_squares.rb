@@ -14,9 +14,7 @@ end
 def header_skip_reader(file)
   f = open(file)
   f.gets
-  f.lines do |line|
-    yield(line)
-  end
+  f.lines{ |line| yield(line) }
   f.close
 end
 
