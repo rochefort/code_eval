@@ -1,5 +1,16 @@
 #!/usr/bin/env ruby -w
 
+def selection_sort(numbers)
+  tmp = numbers.dup
+  res = []
+  until tmp.empty?
+    min_index = tmp.find_index(tmp.min)
+    res << tmp.delete_at(min_index)
+  end
+  res
+end
+
 ARGF.each_line do |line|
-  puts line.chomp.split.map(&:to_f).sort.join(' ')
+  numbers = line.chomp.split.map(&:to_f)
+  puts selection_sort(numbers).join(' ')
 end
